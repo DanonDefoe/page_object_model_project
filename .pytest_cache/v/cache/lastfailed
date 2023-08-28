@@ -1,5 +1,7 @@
 {
   "test_main_page.py::test_guest_can_go_to_login_page": true,
   "test_main_page.py::test_guest_should_see_login_link": true,
-  "test_product_page.py::test_guest_can_add_product_to_basket[http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7]": true
+  "test_product_page.py::test_guest_can_add_product_to_basket[http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7]": true,
+  "test_product_page.py::test_guest_cant_see_success_message_after_adding_product_to_basket": true,
+  "test_product_page.py::test_message_disappeared_after_adding_product_to_basket": true
 }

@@ -16,3 +16,15 @@ class LoginPage(BasePage):
 
     def should_be_register_form(self):
         assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "Reg form isn't presented or locator invalid"
+
+    def register_new_user(self, browser, email, password):
+        link = 'http://selenium1py.pythonanywhere.com/ru/accounts/login/'
+        login_page = LoginPage(browser, link)
+        login_page.open()
+        self.should_be_register_form()
+
+        self.browser.find_element(*LoginPageLocators.EMAIL_INPUT).send_keys(email)
+        self.browser.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REPEAT_PASSWORD_INPUT).send_keys(password)
+
+        self.browser.find_element(*LoginPageLocators.REGISTER_BUTTON).click()
