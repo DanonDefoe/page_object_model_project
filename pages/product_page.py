@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from pages.locators import ItemDetailedLocators, AlertLocators
+from pages.locators import ItemDetailedLocators, AlertLocators, BasePageLocators
 
 
 class ProductPage(BasePage):
@@ -15,8 +15,15 @@ class ProductPage(BasePage):
         assert self.is_element_present(*ItemDetailedLocators.ADD_TO_BASKET_BUTTON), "The button is not presented"
 
     def should_be_confirmation_message(self):
+        page_language = self.browser.find_element(*BasePageLocators.PAGE_LANGUAGE).text
         confirmation_message = self.browser.find_element(*AlertLocators.ITEM_ADDED_MESSAGE).text
-        assert "has been added to your basket." in confirmation_message, "Item hasn't been added to the basket"
+
+        if page_language == "ru":
+            assert "был добавлен в вашу корзину." in confirmation_message, "Item hasn't been added to the basket"
+        elif page_language == "en":
+            assert "has been added to your basket." in confirmation_message, "Item hasn't been added to the basket"
+        else:
+            return 'page language is not RU or EN'
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(

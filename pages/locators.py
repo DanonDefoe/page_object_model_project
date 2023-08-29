@@ -6,13 +6,13 @@ class BasePageLocators():
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET_BUTTON = (By.CSS_SELECTOR, '.btn-group a')
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
-
+    PAGE_LANGUAGE = (By.CSS_SELECTOR, '[lang]')
 
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, '#login_form')
     REGISTER_FORM = (By.CSS_SELECTOR, '#register_form')
     EMAIL_INPUT = (By.CSS_SELECTOR, '#id_registration-email')
-    PASSWORD_INPUT = (By.CSS_SELECTOR, '##id_registration-password1')
+    PASSWORD_INPUT = (By.CSS_SELECTOR, '#id_registration-password1')
     REPEAT_PASSWORD_INPUT = (By.CSS_SELECTOR, '#id_registration-password2')
     REGISTER_BUTTON = (By.CSS_SELECTOR, '#register_form button')
 
@@ -32,3 +32,9 @@ class AlertLocators():
 class BasketLocators():
     CONTINUE_SHOPPING_BASKET_MESSAGE = (By.CSS_SELECTOR, '#content_inner p a')
     ITEMS_IN_BASKET_HEADER = (By.CSS_SELECTOR, '.basket-title .row h2')
+
+
+class StaticLinks():
+    LOGIN_AND_REGISTRATION_PAGE = 'http://selenium1py.pythonanywhere.com/ru/accounts/login/'
+    BOOK_CODERS_AT_WORK = 'http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/'
+    MAIN_PAGE = 'http://selenium1py.pythonanywhere.com/'

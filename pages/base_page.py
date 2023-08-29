@@ -1,6 +1,5 @@
 import math
 
-import pytest
 from selenium.webdriver.support import expected_conditions as EC
 
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
